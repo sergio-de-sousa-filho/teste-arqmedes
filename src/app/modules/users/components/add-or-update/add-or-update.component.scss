@@ -1,0 +1,39 @@
+
+h1.page-title {
+    margin-left: 15px;
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+
+mat-card {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 20px;
+
+    mat-card-content {
+        form {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+
+            mat-form-field {
+                margin-right: 20px;
+                margin-bottom: 20px;
+                width: 320px;
+            }
+
+            input:read-only {
+                opacity: .4;
+            }
+        }        
+    }
+
+    mat-card-footer {
+        display: flex;
+        justify-content: right;
+
+        button {
+            margin-left: 8px;
+        }
+    }
+}

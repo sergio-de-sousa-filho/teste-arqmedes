@@ -1,0 +1,74 @@
+<app-toolbar></app-toolbar>
+
+<div *ngIf="loading" class="loading">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="!loading" class="header">
+    <div class="page-title">
+        <h1>{{ 'users.users-list.users' | translate }}</h1>
+    </div>
+    <div class="search" >
+        <mat-form-field>
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput type="search" placeholder="{{ 'users.users-list.search-user' | translate }}" [(ngModel)]="textFilter" (keyup)="requestFilterRefresh()">
+        </mat-form-field>
+    </div>
+</div>
+
+<mat-card *ngIf="!loading" class="user-list">
+    <table mat-table [dataSource]="pagination.pageItems">
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> {{ 'users.users-list.col-actions' | translate }} </th>
+            <td mat-cell *matCellDef="let user">                
+                <button mat-icon-button color="primary" (click)="openUserDetailsDialog(user)">
+                    <mat-icon>search</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" (click)="editUser(user)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" (click)="showDeleteUserDialog(user)" [disabled]="user.id === userLogged?.id">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> {{ 'users.users-list.col-name' | translate }} </th>
+            <td mat-cell *matCellDef="let user"> {{ user.name }} </td>
+        </ng-container>
+        <ng-container matColumnDef="birth">
+            <th mat-header-cell *matHeaderCellDef> {{ 'users.users-list.col-birth' | translate }} </th>
+            <td mat-cell *matCellDef="let user"> {{ user.birth | date }} </td>
+        </ng-container>
+        <ng-container matColumnDef="cpf">
+            <th mat-header-cell *matHeaderCellDef> CPF </th>
+            <td mat-cell *matCellDef="let user"> {{ user.cpf | mask: '000.000.000-00' }} </td>
+        </ng-container>
+        <ng-container matColumnDef="city">
+            <th mat-header-cell *matHeaderCellDef> {{ 'users.users-list.col-city' | translate }} </th>
+            <td mat-cell *matCellDef="let user"> {{ user.city }} - {{ user.state }} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-card-footer>
+        <div class="col-left">
+            <mat-paginator
+                [pageIndex]="pagination.pageIndex"
+                [pageSize]="pagination.pageSize" 
+                [length]="users.length"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                (page)="handlePageEvent($event)"
+                aria-label="Select page">
+            </mat-paginator>
+        </div>
+        <div class="col-right">
+            <button id="btn-add" mat-raised-button color="primary" [routerLink]="['/users/add-or-update']">
+                <mat-icon>add</mat-icon>
+                {{ 'users.users-list.add' | translate }}                 
+            </button>
+        </div>
+    </mat-card-footer>
+
+</mat-card>

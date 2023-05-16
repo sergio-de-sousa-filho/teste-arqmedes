@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <span class="project-name">{{ 'shared.app-toolbar.exam' | translate }} Arqmedes</span>
+    <div class="right-side-items">
+        <div class="switch">
+            <input id="language-toggle" 
+                class="check-toggle check-toggle-round-flat" 
+                type="checkbox" 
+                [(ngModel)]="englishLanguageSelected" 
+                (change)="toggleLanguage($event)">
+            <label for="language-toggle"></label>            
+            <span class="on">PT</span>
+            <span class="off">EN</span>            
+        </div>
+        <button mat-icon-button *ngIf="showUserData">
+            <mat-icon>person</mat-icon>
+        </button>
+        <span *ngIf="showUserData">{{ userLogged?.name }}</span>
+        <button *ngIf="showUserData" id="btn-logout" type="submit" mat-raised-button (click)="logout()" >
+            {{ 'shared.app-toolbar.logout' | translate }}
+        </button>
+    </div>
+</mat-toolbar>

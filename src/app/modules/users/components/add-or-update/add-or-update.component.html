@@ -1,0 +1,111 @@
+<app-toolbar></app-toolbar>
+
+<h1 class="page-title" *ngIf="mode == 'Add'"> {{ 'users.add-or-update.add-user' | translate }} </h1>
+<h1 class="page-title" *ngIf="mode == 'Update'"> {{ 'users.add-or-update.update-user' | translate }} </h1>
+
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="form">
+
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'users.users-list.col-name' | translate }}</mat-label>
+                <input matInput placeholder="{{ 'users.add-or-update.type-user-name' | translate }}" formControlName="name" type="text"
+                    [readonly]="loading">
+                <mat-error *ngIf="form.get('name')?.errors">{{ 'users.add-or-update.invalid-name' | translate }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="{{ 'users.add-or-update.type-email' | translate }}" formControlName="email" type="email"
+                    [readonly]="loading || mode != 'Add'">
+                <mat-error *ngIf="form.get('email')?.errors">{{ 'users.add-or-update.invalid-email' | translate }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>CPF</mat-label>
+                <input matInput placeholder="{{ 'users.add-or-update.type-cpf' | translate }}" formControlName="cpf" type="text"
+                    [readonly]="loading || mode != 'Add'" mask="000.000.000-00">
+                <mat-error *ngIf="form.get('cpf')?.errors">{{ 'users.add-or-update.invalid-cpf' | translate }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'users.add-or-update.col-profession' | translate }}</mat-label>
+                <input matInput placeholder="{{ 'users.add-or-update.type-profession' | translate }}" formControlName="profession" type="text"
+                    [readonly]="loading">
+                <mat-error *ngIf="form.get('profession')?.errors">{{ 'users.add-or-update.invalid-profession' | translate }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'users.users-list.col-birth' | translate }}</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birth">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker startView="year"></mat-datepicker>
+                <mat-error *ngIf="form.get('birth')?.errors">{{ 'users.add-or-update.invalid-birth' | translate }}</mat-error>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'users.add-or-update.col-marital-status' | translate }}</mat-label>
+                <mat-select formControlName="maritalStatus" [disabled]="loading">                    
+                    <mat-option value="divorced">{{ 'users.add-or-update.marital-status-op-divorced' | translate }}</mat-option>
+                    <mat-option value="married">{{ 'users.add-or-update.marital-status-op-married' | translate }}</mat-option>
+                    <mat-option value="single">{{ 'users.add-or-update.marital-status-op-single' | translate }}</mat-option>
+                    <mat-option value="widow">{{ 'users.add-or-update.marital-status-op-widow' | translate }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.get('maritalStatus')?.errors">{{ 'users.add-or-update.invalid-marital-status' | translate }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'users.add-or-update.col-state' | translate }}</mat-label>
+                <mat-select formControlName="state" [disabled]="loading">                    
+                    <mat-option value="AC">Acre</mat-option>
+                    <mat-option value="AL">Alagoas</mat-option>
+                    <mat-option value="AP">Amapá</mat-option>
+                    <mat-option value="AM">Amazonas</mat-option>
+                    <mat-option value="BA">Bahia</mat-option>
+                    <mat-option value="CE">Ceará</mat-option>
+                    <mat-option value="DF">Distrito Federal</mat-option>
+                    <mat-option value="ES">Espírito Santo</mat-option>
+                    <mat-option value="GO">Goiás</mat-option>
+                    <mat-option value="MA">Maranhão</mat-option>
+                    <mat-option value="MT">Mato Grosso</mat-option>
+                    <mat-option value="MS">Mato Grosso do Sul</mat-option>
+                    <mat-option value="MG">Minas Gerais</mat-option>
+                    <mat-option value="PA">Pará</mat-option>
+                    <mat-option value="PB">Paraíba</mat-option>
+                    <mat-option value="PR">Paraná</mat-option>
+                    <mat-option value="PE">Pernambuco</mat-option>
+                    <mat-option value="PI">Piauí</mat-option>
+                    <mat-option value="RJ">Rio de Janeiro</mat-option>
+                    <mat-option value="RN">Rio Grande do Norte</mat-option>
+                    <mat-option value="RS">Rio Grande do Sul</mat-option>
+                    <mat-option value="RO">Rondônia</mat-option>
+                    <mat-option value="RR">Roraima</mat-option>
+                    <mat-option value="SC">Santa Catarina</mat-option>
+                    <mat-option value="SP">São Paulo</mat-option>
+                    <mat-option value="SE">Sergipe</mat-option>
+                    <mat-option value="TO">Tocantins</mat-option>                    
+                </mat-select>
+                <mat-error *ngIf="form.get('state')?.errors">{{ 'users.add-or-update.invalid-state' | translate }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>{{ 'users.add-or-update.col-city' | translate }}</mat-label>
+                <input matInput placeholder="{{ 'users.add-or-update.type-city' | translate }}" formControlName="city" type="text" [readonly]="loading">
+                <mat-error *ngIf="form.get('city')?.errors">{{ 'users.add-or-update.invalid-city' | translate }}</mat-error>
+            </mat-form-field>
+
+        </form>
+
+    </mat-card-content>
+
+    <mat-card-footer>
+        <mat-spinner *ngIf="loading" [diameter]="'30'"></mat-spinner>
+        <button mat-button (click)="cancel()" [disabled]="loading">
+            {{ '_globals.cancel' | translate }}
+        </button>
+        <button mat-raised-button color="primary" [disabled]="form.status !== 'VALID' || loading" (click)="save()">
+            {{ '_globals.save' | translate }}
+        </button>
+    </mat-card-footer>
+
+</mat-card>

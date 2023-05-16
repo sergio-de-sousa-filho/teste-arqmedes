@@ -1,0 +1,11 @@
+
+$app-background-color: rgb(232, 240, 254);
+$app-text-color: #444;
+
+html, body { height: 100%; }
+body { 
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  background-color: $app-background-color;
+  color: $app-text-color;
+}

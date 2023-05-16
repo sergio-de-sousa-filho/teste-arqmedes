@@ -1,0 +1,27 @@
+
+<div class="modal-content">
+    
+    <h1>{{ 'users.delete-user-dialog.delete-user' | translate }}</h1>    
+    
+    <hr>
+
+    <br />
+
+    {{ 'users.delete-user-dialog.are-you-sure' | translate }} {{ data.name }}?
+
+    <br /> <br />
+
+    <hr>
+
+    <mat-dialog-actions>
+        <button mat-flat-button (click)="returnResult(false)">
+            {{ '_globals.cancel' | translate }}
+        </button>
+        <button mat-raised-button color="warn" (click)="returnResult(true)">
+            <mat-icon>delete</mat-icon>
+            {{ 'users.delete-user-dialog.delete' | translate }}
+        </button>
+    </mat-dialog-actions>
+    
+</div>
+

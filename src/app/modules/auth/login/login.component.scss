@@ -1,0 +1,54 @@
+
+.login-page {
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;    
+
+    mat-card {    
+        width: min(450px, 95vw);
+        padding: 30px;  
+        
+        mat-card-title {
+            text-align: center;
+            padding-bottom: 40px;
+        }        
+        mat-card-content {            
+            form {
+                mat-form-field {
+                    width: 100%;
+                    margin-bottom: 10px;
+
+                    mat-icon {    
+                        color: gray;
+                    }
+                }
+                .login-failed-feedback {
+                    color: red;
+                    font-size: small;
+                }
+            }
+        }
+        mat-card-footer {
+            display: flex;    
+            padding-top: 10px;    
+            justify-content: right;   
+            
+            mat-spinner {
+                width: 10px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

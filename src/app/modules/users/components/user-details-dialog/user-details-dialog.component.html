@@ -1,0 +1,35 @@
+
+<div class="modal-content">
+    
+    <h1>{{ 'users.user-details.user-details' | translate }}</h1>    
+    
+    <hr>
+
+    <div class="user-data-rows">
+        <div>{{ 'users.users-list.col-name' | translate }}</div>
+        <div>{{ data.name }}</div>
+        <div>Email</div>
+        <div>{{ data.email }}</div>
+        <div>CPF</div>
+        <div>{{ data.cpf | mask: '000.000.000-00' }}</div>
+        <div>{{ 'users.users-list.col-birth' | translate }}</div>
+        <div>{{ data.birth | date }}</div>
+        <div>{{ 'users.add-or-update.col-profession' | translate }}</div>
+        <div>{{ data.profession }}</div>
+        <div>{{ 'users.add-or-update.col-marital-status' | translate }}</div>
+        <div>{{ data.maritalStatus }}</div>
+        <div>{{ 'users.add-or-update.col-city' | translate }}</div>
+        <div>{{ data.city }} - {{ data.state }}</div> 
+    </div>
+
+    <hr>
+
+    <mat-dialog-actions>
+        <button mat-raised-button mat-dialog-close color="primary">
+            <mat-icon>close</mat-icon>
+            {{ '_globals.close' | translate }}           
+        </button>
+    </mat-dialog-actions>
+    
+</div>
+

@@ -1,0 +1,77 @@
+{
+    "_globals": {
+        "cancel": "Cancelar",
+        "close": "Fechar",
+        "save": "Salvar"
+    },
+    "app-toolbar": {
+        "you-have-been-logged-out": "Você foi desconectado(a)"
+    },
+    "login": {        
+        "credentials": "Credenciais",
+        "invalid-email": "Email inválido",
+        "invalid-login-verify": "Login inválido, verifique as credenciais.",
+        "invalid-password": "Senha inválida",
+        "login": "Entrar",
+        "password": "Senha",
+        "type-your-email": "Digite seu email",
+        "type-your-password": "Digite sua senha",
+        "unexpected-error": "Erro não esperado ao tentar fazer login",
+        "welcome": "Bem vindo(a)"
+    },
+    "shared": {
+        "app-toolbar": {
+            "exam": "Teste",
+            "logout": "Sair"
+        }        
+    },
+    "users": {
+        "add-or-update": {
+            "add-user": "Incluir usuário",
+            "col-city": "Cidade",
+            "col-marital-status": "Estado civil",
+            "col-profession": "Profissão",
+            "col-state": "Estado",      
+            "error-creating-users": "Falha criando usuário",
+            "error-loading-users": "Falha carregando usuários",
+            "invalid-birth": "Data de nascimento inválida",
+            "invalid-city": "Cidade inválida",
+            "invalid-cpf": "CPF inválido",
+            "invalid-email": "Email inválido",
+            "invalid-marital-status": "Estado civil inválido",
+            "invalid-name": "Nome inválido",
+            "invalid-profession": "Profissão inválida",
+            "invalid-state": "Estado inválido",
+            "marital-status-op-divorced": "Divorciado(a)",
+            "marital-status-op-married": "Casado(a)",
+            "marital-status-op-single": "Solteiro(a)",
+            "marital-status-op-widow": "Viúvo(a)",
+            "type-city": "Digite o nome da cidade",
+            "type-cpf": "Digite o CPF",
+            "type-email": "Digite o email",
+            "type-profession": "Digite a profissão",
+            "type-user-name": "Digite o nome",
+            "update-user": "Atualizar usuário",
+            "user-created-successfully": "Usuário criado com sucesso",
+            "user-updated-successfully": "Usuário atualizado com sucesso"
+        },
+        "delete-user-dialog": {
+            "are-you-sure": "Tem certeza que deseja remover permanentemente o usuário",
+            "delete": "Remover",
+            "delete-user": "Remover usuário"
+        },
+        "user-details": {
+            "user-details": "Detalhes do usuário"
+        },
+        "users-list": {
+            "add": "Adicionar",
+            "col-actions": "Ações",
+            "col-birth": "Nascimento",
+            "col-city": "Cidade",
+            "col-name": "Nome",
+            "search-user": "Buscar usuário",
+            "user-removed-successfully": "Usuário removido com sucesso",
+            "users": "Usuários"            
+        }
+    }
+}

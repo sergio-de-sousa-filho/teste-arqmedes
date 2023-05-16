@@ -1,0 +1,25 @@
+.modal-content {
+    padding: 20px;
+    width: min(400px, 95vw);
+
+    .user-data-rows {
+        max-height: 60vh;
+        overflow-y: auto;
+        
+        div {
+            padding: 4px;
+        }
+        div:nth-child(odd) {
+            background-color: #EEE;
+            font-weight: bold;
+        }   
+        div:nth-child(even) {
+            padding-left: 20px;
+        }        
+    }
+
+    mat-dialog-actions {
+        display: flex;
+        justify-content: right;        
+    }
+}

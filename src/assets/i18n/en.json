@@ -1,0 +1,77 @@
+{
+    "_globals": {
+        "cancel": "Cancel",
+        "close": "Fechar",
+        "save": "Save"
+    },
+    "app-toolbar": {
+        "you-have-been-logged-out": "You have been logged out"
+    },
+    "login": {        
+        "credentials": "Credentials",
+        "invalid-email": "Invalid email",
+        "invalid-login-verify": "Invalid login, please verify your credentials.",
+        "invalid-password": "Invalid password",
+        "login": "Login",
+        "password": "Password",
+        "type-your-email": "Type your email",
+        "type-your-password": "Type your password",
+        "unexpected-error": "Unexpected error during login",
+        "welcome": "Welcome"
+    },
+    "shared": {
+        "app-toolbar": {
+            "exam": "Exam",
+            "logout": "Logout"
+        }        
+    },
+    "users": {
+        "add-or-update": {
+            "add-user": "Add user",
+            "col-city": "City",
+            "col-marital-status": "Marital status",
+            "col-profession": "Profession",
+            "col-state": "State",
+            "error-creating-users": "Error creating users",
+            "error-loading-users": "Error loading users",
+            "invalid-birth": "Invalid birth date",
+            "invalid-city": "Invalid city",
+            "invalid-cpf": "Invalid CPF",
+            "invalid-email": "Invalid email",
+            "invalid-marital-status": "Invalid marital status",
+            "invalid-name": "Invalid name",
+            "invalid-profession": "Invalid profession",
+            "invalid-state": "Invalid state",
+            "marital-status-op-divorced": "Divorced",
+            "marital-status-op-married": "Married",
+            "marital-status-op-single": "Single",
+            "marital-status-op-widow": "Widow/er",
+            "type-city": "Type the city name",
+            "type-cpf": "Type the CPF number",
+            "type-email": "Type the email address",
+            "type-profession": "Type the profession",
+            "type-user-name": "Type the user name",
+            "update-user": "Update user",
+            "user-created-successfully": "User created successfully",
+            "user-updated-successfully": "User updated successfully"
+        },
+        "delete-user-dialog": {
+            "are-you-sure": "Are you sure you want to delete the user",
+            "delete": "Delete",
+            "delete-user": "Delete user"
+        },
+        "user-details": {
+            "user-details": "User details"
+        },
+        "users-list": {
+            "add": "Add",
+            "col-actions": "Actions",
+            "col-birth": "Birth",
+            "col-city": "City",
+            "col-name": "Name",
+            "search-user": "Search user",
+            "user-removed-successfully": "User removed successfully",
+            "users": "Users"
+        }
+    }
+}
